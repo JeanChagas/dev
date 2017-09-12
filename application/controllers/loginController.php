@@ -9,4 +9,5 @@
 		session_destroy();
 
 		require_once(VIEWS.'login.php');
+		exit();
 	}

@@ -1,5 +1,6 @@
 <?php 
 
+    require_once(CONTROLLERS."loginController.php");
 
 	function __autoload($file){
         
@@ -80,7 +81,7 @@
                     break;                  
                         
             case "index":
-                    
+
                     $sala = new Sala();
                     $salas = array();
 

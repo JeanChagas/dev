@@ -39,7 +39,7 @@
 					echo '</div>';
 					echo '<a href="#"><div class="col-md-10 col-xs-10 salas">';
 					echo '<h1><i class="fa fa-eercast" aria-hidden="true"></i> Auditorio '. $value['numero'] .'</h1>';
-					echo '<small>'. $value['apelido'] .'</small>';
+					echo '<small>• '. $value['apelido'] .' •</small>';
 					echo '</div></a>';
 					echo '<div class="col-md-1 col-xs-1">';
 					echo '</div>';
