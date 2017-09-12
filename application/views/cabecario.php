@@ -47,11 +47,3 @@
 				</div>
 			</div>		
 		</div>';
-/*
-
-Ficha: https://intranet.kinghost.com.br:56001/kinghost.cgi?ficha=2350336
-Nome do Cliente: Allister
-Domínio:   essencialac.com.br 
-Senha de Atendimento: Confirmou
-Chamado: http://backoffice.kinghost.net/legado/view/id/1968620/origem/legadoá
-Motivo do contato: Cliente com chamado em aberto, tem reclamado muito do tempo de resposta, gostaria muito de falar com nosso setor SAC*/
