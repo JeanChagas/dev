@@ -1,9 +1,9 @@
 <?php
 
     define('_DOMAIN', 'http://' . $_SERVER['HTTP_HOST']);        
-    define('CONTROLLERS', 'app/controllers/'); 
+    define('CONTROLLERS', 'application/controllers/'); 
     define('MODELS', 'application/models/'); 
-    define('VIEWS', 'app/views/'); 
+    define('VIEWS', 'application/views/'); 
     define('DB_HOST', 'mysql.jean.chagas.kinghost.net'); 
     define('DB_NAME', 'jean01'); 
     define('DB_USER', 'jean01'); 
