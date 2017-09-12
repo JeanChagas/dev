@@ -1,0 +1,347 @@
+	body{
+		background: Pink1;
+
+	}
+	div.main{
+		margin: 10px;
+		
+	}
+	th{
+		background-color: rgb(58,26,90);
+		width: 160px;
+	}
+	th, td {
+		text-align: center;			
+	}
+	table, th, td {
+			border-top: 1px solid grey;
+			border: 1px solid grey;
+			border-collapse: collapse;
+	}
+	a{
+		color:#ffffff;
+	}
+
+	.salas{
+		color:white;
+		background-color: rgb(58,26,90);
+		margin: 50px;
+		border:1px solid rgb(58,26,90);
+		border-radius: 10px;
+		background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+	}
+
+	.salas:hover{
+		color: white;
+		background-color: #00b386;
+		margin: 50px;
+		border:1px solid #00b386;
+		border-radius: 10px;
+		background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.1));
+	}
+	
+
+	/*.EfetivoFone{
+			padding:00px 10px 00px 10px;	
+			background-color: #2FBFFF;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	#EfetivoFone{
+			text-align:center;	
+			background-color: #2FBFFF;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	.EfetivoFone:hover{
+			background-color: white;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	
+	.EfetivoChat{
+			padding:00px 10px 00px 10px;
+			background-color: #2AA9E1;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);						
+	}
+	#EfetivoChat{
+			text-align:center;				
+			background-color: #2AA9E1;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	.EfetivoChat:hover{
+			background-color: white;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}			*/
+	.EfetivoFone{
+			padding:00px 10px 00px 10px;	
+			background-color: #00e6ac;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	#EfetivoFone{
+			text-align:center;	
+			background-color: #00e6ac;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	.EfetivoFone:hover{
+			background-color: white;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	
+	.EfetivoChat{
+			padding:00px 10px 00px 10px;
+			background-color: #00b386;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);						
+	}
+	#EfetivoChat{
+			text-align:center;				
+			background-color: #00b386;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	.EfetivoChat:hover{
+			background-color: white;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+
+	.nvag{
+			padding:10px;	
+			background-color: lightgrey;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	#nvag{
+			text-align:center;	
+			background-color: lightgrey;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));			
+			color: rgb(58,26,90);
+			
+	}							
+	.nvag:hover{
+			background-color: white;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	.VAGA{
+			padding:00px 10px 00px 10px;
+			background-color: #FAC600;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	#VAGA{
+			text-align:center;	
+			background-color: #FAC600;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	
+					
+	.VAGA:hover{
+			background-color: white;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	
+	.estagioSem{
+			padding:00px 10px 00px 10px;	
+			background-color: #33ffcc;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	#estagioSem{
+			text-align:center;	
+			background-color: #33ffcc;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	.estagioSem:hover{
+			background-color: white;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	
+	.Lideranca{
+			padding:30px 10px 30px 10px;
+			background-color: #3E6B7F;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: white;
+	}
+	#Lideranca{
+			text-align:center;	
+			background-color: #3E6B7F;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: white;
+	}
+	.Lideranca:hover{
+			background-color: white;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	.esuporte{
+			padding:30px 10px 30px 10px;
+			background-color: #3E6B7F;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: white;
+	}
+	#esuporte{
+			text-align:center;	
+			background-color: #3E6B7F;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: white;
+	}
+	.esuporte:hover{
+			background-color: white;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	
+	.ChamadosJr{
+			padding:00px 10px 00px 10px;
+			background-color: #00b386;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);						
+	}
+	#ChamadosJr{
+			text-align:center;				
+			background-color: #00b386;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	.ChamadosJr:hover{
+			background-color: white;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}	
+	
+	.ChamadosPl{
+			padding:00px 10px 00px 10px;
+			background-color: #00b386;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);						
+	}
+	#ChamadosPl{
+			text-align:center;				
+			background-color: #00b386;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}
+	.ChamadosPl:hover{
+			background-color: white;	
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: rgb(58,26,90);
+	}	
+	
+	.Supervisao{
+			padding:30px 05px 30px 05px;
+			background-color: #3E6B7F;
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: white;
+	}
+	.Supervisao:hover{
+			background-color: white;	
+			color: rgb(58,26,90);
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+	}
+	#horarios{
+			text-align:center;	
+			background-color: rgb(58,26,90);
+			background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.3));
+			color: white;
+	}
+	a#ippa:active{
+		
+		color: white;
+		
+	}
+	a#ippa:visited{
+		
+		color: white;
+		
+	}
+	a#ippa:link{
+		
+		color: white;
+		
+	}
+	a#ippa:hover{
+		
+		color: white;
+		
+	}
+	
+	
+	
+	.pa{
+			padding: 5px;
+			text-align: center;
+			
+	}
+	.cab{
+			background-color: rgb(58,26,90);
+			width: 100%;
+			color:white;
+
+	}
+	#title{
+			background-color: rgba(58,26,90,0.1);
+			color:white;
+
+	}
+	#icon{
+			
+			color: white;
+			padding: 3px 0px 0px 0px;
+			margin: 0px; 
+			text-align: center;
+			/*float: right;*/
+	}	
+				
+	a.icon7:hover{
+		color:white;		
+	}
+	a.icon7:action{
+		color:white;		
+	}
+	a.icon7:visited{
+		color:white;		
+	}
+	a.icon7{
+		color:white;		
+	}
+	
+	
+	#icon2{
+		
+		padding: 10px; 
+		margin: 2px 7px 7px 7px;
+		border-radius: 5px;
+	}
+	
+	#icon2:hover{
+		border: solid white 2px;
+		padding: 10px; 
+		margin: 0px 5px 5px 5px;
+		border-radius: 5px;
+	}
+
+	@media (min-width: 767px) {
+    .navbar-nav .dropdown-menu .caret {
+	transform: rotate(-90deg);
+    }
+
+   
+    .footer {
+    	text-align: center;
+    	color: white;
+    	padding: 10px 0px 0px 0px;
+    }
+}
+	
