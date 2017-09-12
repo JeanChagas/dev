@@ -73,6 +73,19 @@
                    
                     break;
 
+            case "system":                 
+                    require_once("system/phpinfo.php");
+                    exit();
+                    break;                  
+                        
+            case "index":
+                    require(VIEWS."home.php");
+                    break;
+
+            case "logout":
+                    require(VIEWS."logout.php");
+                    break;
+
             default:
                     require_once(ERROS."404.php");
                     break;
