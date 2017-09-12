@@ -1,5 +1,6 @@
 <?php 
 
+
 	function __autoload($file){
         
         if(file_exists(MODELS.$file.".class.php")){
@@ -47,7 +48,7 @@
 
             case "update":
             		$where = array(
-            			'id' => '3'
+            			'id' => '4'
             		);
 
 
@@ -79,7 +80,13 @@
                     break;                  
                         
             case "index":
-                    require(VIEWS."home.php");
+                    
+                    $sala = new Sala();
+                    $salas = array();
+
+                    $salas = $sala->read();
+
+                    require_once(VIEWS."home.php");
                     break;
 
             case "logout":

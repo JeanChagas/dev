@@ -9,8 +9,9 @@ class Base extends Database{
             $campos = implode(", ", array_keys($dados));
             $valores  = implode(", ", array_values($dados));
             $sql = "INSERT INTO `".$this->tabela."`(".$campos.") VALUES (".$valores.");";
-	    $statement = $this->dbconnect->prepare($sql);
+	        $statement = $this->dbconnect->prepare($sql);
             $statement->execute();
+            return true;
         }
         
         public function read(Array $where = null){
@@ -74,7 +75,7 @@ class Base extends Database{
             if (!empty($condicaoString)) {
                 $sql = $sql." WHERE {$condicaoString}";
             }else{
-                die('Ops! Falha na operação.');
+                die('Ops! Operação encerrada.');
             }
 
        
@@ -91,43 +92,44 @@ class Base extends Database{
     
             $statement->execute();
            
-            
+            return true;
         }
          
         
         public function delete($where){
             
-                $condicaoString = '';
-                $condicoes = array();
-                $sql = "DELETE FROM `".$this->tabela."`";
-                
-                foreach (array_keys($where) as $nomeCampo) { 
-                    $condicoes []= "`{$nomeCampo}` = :{$nomeCampo}";
-                }
+            $condicaoString = '';
+            $condicoes = array();
+            $sql = "DELETE FROM `".$this->tabela."`";
+            
+            foreach (array_keys($where) as $nomeCampo) { 
+                $condicoes []= "`{$nomeCampo}` = :{$nomeCampo}";
+            }
 
-                $condicaoString = implode(' AND ', $condicoes);
-            	
+            $condicaoString = implode(' AND ', $condicoes);
+        	
 
-                if (!empty($condicaoString)) {
-                    $sql = $sql." WHERE {$condicaoString}";
-                }else{
-                    die('Ops! Falha na operação.');
-                }
+            if (!empty($condicaoString)) {
+                $sql = $sql." WHERE {$condicaoString}";
+            }else{
+                die('Ops! Falha na operação.');
+            }
 
-           
-                $statement = $this->dbconnect->prepare($sql);  
+       
+            $statement = $this->dbconnect->prepare($sql);  
 
-                if(!is_null($where)){
+            if(!is_null($where)){
 
-                    foreach ($where as $chave=>$value){
+                foreach ($where as $chave=>$value){
 
-                        $statement->bindValue(":{$chave}", $value);
-                           
-                    }   
+                    $statement->bindValue(":{$chave}", $value);
+                       
                 }   
-		
-                $statement->execute();
-           
+            }   
+	
+            $statement->execute();
+        
+            return true;
             
 	}        
 }
