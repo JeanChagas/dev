@@ -24,8 +24,6 @@
     $lista = array();
     $lista = explode('/', $aux);
 
-    //print_r($lista);
-
     switch ($lista[0]){
 
     		case "create":
@@ -73,6 +71,10 @@
                     $sala = new Sala();
                     print_r($sala->delete($where));
                    
+                    break;
+
+            default:
+                    require_once(ERROS."404.php");
                     break;
 
 
