@@ -9,7 +9,7 @@
                     <div class="col-md-3 col-xs-0"></div> 
 					<div class="col-md-1 col-xs-2 " id="icon" >	
                        
-						<div class="collapse navbar-collapse">
+						<!--<div class="collapse navbar-collapse">
 
                             <ul class="nav navbar-nav" >
                                 <li>
@@ -42,7 +42,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </div>
+                        </div>-->
 					</div>
 				</div>
 			</div>		
