@@ -73,7 +73,7 @@
                    
                     break;
 
-            case "system":                 
+            case "phpinfo":               
                     require_once("system/phpinfo.php");
                     exit();
                     break;                  
