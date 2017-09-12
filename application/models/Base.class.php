@@ -51,15 +51,46 @@ class Base extends Database{
         
         public function update(Array $dados, $where){
             
+            $condicaoString = '';
+            $condicoes = array();
+
+
             foreach($dados as $inds => $vals){
                     $campos[] = "`".$inds."` = ".$vals; 
             }
             
             $campos = implode(", ", $campos);
             
-            $sql = "UPDATE `".$this->tabela."` SET ".$campos." WHERE ".$where;
-            $statement = $this->dbconnect->prepare($sql);
+            $sql = "UPDATE `".$this->tabela."` SET ".$campos;
+
+            
+            foreach (array_keys($where) as $nomeCampo) { 
+                $condicoes []= "`{$nomeCampo}` = :{$nomeCampo}";
+            }
+
+            $condicaoString = implode(' AND ', $condicoes);
+            
+
+            if (!empty($condicaoString)) {
+                $sql = $sql." WHERE {$condicaoString}";
+            }else{
+                die('Ops! Falha na operação.');
+            }
+
+       
+            $statement = $this->dbconnect->prepare($sql);  
+
+            if(!is_null($where)){
+
+                foreach ($where as $chave=>$value){
+
+                    $statement->bindValue(":{$chave}", $value);
+                       
+                }   
+            }   
+    
             $statement->execute();
+           
             
         }
          
@@ -77,7 +108,7 @@ class Base extends Database{
                 $condicaoString = implode(' AND ', $condicoes);
             	
 
-	        if (!empty($condicaoString)) {
+                if (!empty($condicaoString)) {
                     $sql = $sql." WHERE {$condicaoString}";
                 }else{
                     die('Ops! Falha na operação.');
