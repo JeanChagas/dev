@@ -9,7 +9,7 @@ class Base extends Database{
             $campos = implode(", ", array_keys($dados));
             $valores  = implode(", ", array_values($dados));
             $sql = "INSERT INTO `".$this->tabela."`(".$campos.") VALUES (".$valores.");";
-            $statement = $this->dbconnect->prepare($sql);
+	    $statement = $this->dbconnect->prepare($sql);
             $statement->execute();
         }
         
@@ -68,17 +68,19 @@ class Base extends Database{
             
                 $condicaoString = '';
                 $condicoes = array();
-                $sql = "DELETE FROM `".$this->tabela;
+                $sql = "DELETE FROM `".$this->tabela."`";
                 
                 foreach (array_keys($where) as $nomeCampo) { 
                     $condicoes []= "`{$nomeCampo}` = :{$nomeCampo}";
                 }
 
                 $condicaoString = implode(' AND ', $condicoes);
-                if (!empty($condicaoString)) {
+            	
+
+	        if (!empty($condicaoString)) {
                     $sql = $sql." WHERE {$condicaoString}";
                 }else{
-                    die('Ops! Falha na operação.')
+                    die('Ops! Falha na operação.');
                 }
 
            
@@ -92,8 +94,9 @@ class Base extends Database{
                            
                     }   
                 }   
-
+		
                 $statement->execute();
            
             
-        }
+	}        
+}
