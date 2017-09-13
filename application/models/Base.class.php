@@ -10,6 +10,8 @@ class Base extends Database{
             $valores  = implode(", ", array_values($dados));
             $sql = "INSERT INTO `".$this->tabela."`(".$campos.") VALUES (".$valores.");";
 	        $statement = $this->dbconnect->prepare($sql);
+
+           // print_r($sql); die;
             $statement->execute();
             return true;
         }
@@ -23,8 +25,18 @@ class Base extends Database{
                 $condicaoString = '';
                 $condicoes = array();
                 
-                foreach (array_keys($where) as $nomeCampo) { 
+              /* foreach (array_keys($where) as $nomeCampo) { 
                     $condicoes []= "`{$nomeCampo}` = :{$nomeCampo}";
+                }
+
+                $condicaoString = implode(' AND ', $condicoes);
+                if (!empty($condicaoString)) {
+                    $sql = $sql." WHERE {$condicaoString}";
+                }*/
+
+
+                foreach ($where as $nomeCampo => $valor) { // ajustado para nao utilizar o bind
+                    $condicoes []= "`{$nomeCampo}` = {$valor}";
                 }
 
                 $condicaoString = implode(' AND ', $condicoes);
@@ -35,17 +47,19 @@ class Base extends Database{
 
             $statement = $this->dbconnect->prepare($sql);  
 
-            if(!is_null($where)){
+            
+
+
+          /*  if(!is_null($where)){
 
                 foreach ($where as $chave=>$value){
 
                     $statement->bindValue(":{$chave}", $value);
                        
                 }   
-            }   
+            }   */
 
             $statement->execute();
-           
             return $statement->fetchAll(PDO::FETCH_ASSOC);
           
         }
@@ -131,5 +145,72 @@ class Base extends Database{
         
             return true;
             
-	}        
+	    }  
+
+        public function logar(Array $where){
+
+            $sql = "SELECT * FROM ".$this->tabela;
+            
+
+       /*   
+                $condicaoString = '';
+                $condicoes = array();
+                
+                foreach (array_keys($where) as $nomeCampo) { 
+                    $condicoes []= "`{$nomeCampo}` = :{$nomeCampo}";
+                }
+
+                $condicaoString = implode(' AND ', $condicoes);
+                if (!empty($condicaoString)) {
+                    $sql = $sql." WHERE {$condicaoString}";
+                }
+            
+               
+            $statement = $this->dbconnect->prepare($sql);  
+
+            
+
+                foreach ($where as $chave=>$value){
+                    
+                    $statement->bindValue(":{$chave}", $value);
+                   
+                       
+                }   */
+              
+             $condicaoString = '';
+             $condicoes = array();
+
+            foreach ($where as $nomeCampo => $valor) { // ajustado para nao utilizar o bind
+                $condicoes []= "`{$nomeCampo}` = {$valor}";
+            }
+
+            $condicaoString = implode(' AND ', $condicoes);
+            
+
+            if (!empty($condicaoString)) {
+                $sql = $sql." WHERE {$condicaoString}";
+            }else{
+                die('Ops! Operação encerrada.');
+            }
+
+       
+            $statement = $this->dbconnect->prepare($sql);  
+
+            /*if(!is_null($where)){  //Desativado por causa de bug
+
+                foreach ($where as $chave=>$value){
+
+                    $statement->bindValue(":{$chave}", $value);
+                       
+                }   
+            }   */
+    
+            
+
+            $statement->execute();
+           
+           return $statement->fetchAll(PDO::FETCH_ASSOC);
+                     
+        }
+
 }

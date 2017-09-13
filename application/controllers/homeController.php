@@ -1,6 +1,6 @@
 <?php 
 
-    require_once(CONTROLLERS."loginController.php");
+    
 
 	function __autoload($file){
         
@@ -20,6 +20,7 @@
         }
         
     }  
+    require_once(CONTROLLERS."loginController.php");
 
     $aux = (isset ($_GET['url']) ? $_GET['url'] : 'index');
 
@@ -42,14 +43,23 @@
                     break;
 
             case "read":
+                    $dados = array(
+                        'numero'   => '101',
+                        'apelido'  => '"Segundo"'
+                    );
                     $sala = new Sala();
-                    print_r($sala->read());
-                   
+                    print_r($sala->read($dados));
+
+                   /* $user = new Usuario();
+                    $dados = array(
+                        'username' => '"jean.chagas"'
+                     );
+                    print_r($user->read($dados));*/
                     break;
 
             case "update":
             		$where = array(
-            			'id' => '4'
+            			'id' => '5'
             		);
 
 
@@ -91,7 +101,7 @@
                     break;
 
             case "logout":
-                    require(VIEWS."logout.php");
+                    require(CONTROLLERS."logoutController.php");
                     break;
 
             default:
