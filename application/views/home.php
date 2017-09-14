@@ -73,7 +73,6 @@
 					echo '<form class="register-form" action="reservas/'.$auditorio[$key]->getId().'" method="post">';
 					echo '<label><input style="color:rgb(58,26,90);" type="text" required="" value="" name="data" placeholder="dia/mês/ano"/></label>';
 					echo ' - ';
-				    //echo '<input style="color:rgb(58,26,90);" type="text" required="" value="" name="hora" placeholder="hora:minuto"/>';
 				    echo '	<label><select class="form-control" id="exampleSelect1" name="hora">
                                     <option>00:00</option>
                                     <option>01:00</option>
@@ -104,7 +103,7 @@
 				    echo '<button style="color:rgb(58,26,90);" type="submit">Reservar</button>';
 				    echo '</form>'; 
 				    echo '<br>';
-				    echo '<p class="message">Tabela do dia <a href="tabela/'.$auditorio[$key]->getId().'">aqui</a></p>';            	     
+				    echo '<p class="message">Tabela do dia <a href="tabela/'.$auditorio[$key]->getId().'"><b>aqui</b></a></p>';            	     
 					echo '</div>';
 					echo '<div class="col-md-1 col-xs-1">';
 					echo '</div>';

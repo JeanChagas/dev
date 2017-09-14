@@ -22,8 +22,6 @@
                                         <li><a href="'._DOMAIN.'/registro">Registrar</a></li>  
                                         <li><a href="'._DOMAIN.'/reservas">Reservas</a></li>  
                                         <li class="divider"></li>
-                                        <li><a href="'._DOMAIN.'/editar">Editar</a></li>
-                                        <li class="divider"></li>
                                         <li><a href="'._DOMAIN.'/logout">Logout</a></li>
                                         
                                     </ul>
