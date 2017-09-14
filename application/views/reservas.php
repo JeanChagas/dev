@@ -37,6 +37,7 @@
                 $usuario = array();
                 $cont = 0;
                 if(empty($reservas)){
+                    $cont++;
                     echo 'Não há reservas';
                 }else{
                     foreach ($reservas as $key => $value) {

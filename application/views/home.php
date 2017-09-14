@@ -30,7 +30,7 @@
 		
      	<div class="main">
 			<div class="container">	
-			
+			<h1>Auditórios</h1>
 
 			<?php
 				
@@ -49,6 +49,11 @@
 
 
 				$auditorio = array();
+				if(empty($salas)){
+					echo 'Não há salas';
+				}else{
+
+
 
 				foreach ($salas as $key => $value) {
 
@@ -66,14 +71,40 @@
 					echo '<h1><i class="fa fa-eercast" aria-hidden="true"></i> Auditorio '. $auditorio[$key]->getNumero() .'</h1>';
 					echo '<small>• '. $auditorio[$key]->getApelido() .' •</small>';
 					echo '<form class="register-form" action="reservas/'.$auditorio[$key]->getId().'" method="post">';
-					echo '<input style="color:rgb(58,26,90);" type="text" required="" value="" name="data" placeholder="dia/mês/ano"/>';
+					echo '<label><input style="color:rgb(58,26,90);" type="text" required="" value="" name="data" placeholder="dia/mês/ano"/></label>';
 					echo ' - ';
-				    echo '<input style="color:rgb(58,26,90);" type="text" required="" value="" name="hora" placeholder="hora:minuto"/>';
-				   /* echo '<p data-toggle="tooltip" title="Consulte os horarios"><b>?</b></p>';
-				    echo '';*/
+				    //echo '<input style="color:rgb(58,26,90);" type="text" required="" value="" name="hora" placeholder="hora:minuto"/>';
+				    echo '	<label><select class="form-control" id="exampleSelect1" name="hora">
+                                    <option>00:00</option>
+                                    <option>01:00</option>
+                                    <option>02:00</option>
+                                    <option>03:00</option>   
+                                    <option>04:00</option> 
+                                    <option>05:00</option>
+                                    <option>06:00</option>
+                                    <option>07:00</option>
+                                    <option>08:00</option>   
+                                    <option>09:00</option> 
+                                    <option>10:00</option>
+                                    <option>11:00</option>
+                                    <option>12:00</option>
+                                    <option>13:00</option>   
+                                    <option>14:00</option> 
+                                    <option>15:00</option>
+                                    <option>16:00</option>
+                                    <option>17:00</option>
+                                    <option>18:00</option>   
+                                    <option>19:00</option>  
+                                    <option>20:00</option>
+                                    <option>21:00</option>
+                                    <option>22:00</option>   
+                                    <option>23:00</option> 
+                                </select></label>';
 					echo '<br><br>';
 				    echo '<button style="color:rgb(58,26,90);" type="submit">Reservar</button>';
-				    echo '</form>';                    
+				    echo '</form>'; 
+				    echo '<br>';
+				    echo '<p class="message">Tabela do dia <a href="tabela/'.$auditorio[$key]->getId().'">aqui</a></p>';            	     
 					echo '</div>';
 					echo '<div class="col-md-1 col-xs-1">';
 					echo '</div>';
@@ -82,7 +113,7 @@
 				
 
 
-
+				}
 				
 			?>
 

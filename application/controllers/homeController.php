@@ -144,7 +144,7 @@
                         if($dadosReserva['data'].' '.$dadosReserva['hora'] > $atual){
                             $falhou = true;
                             header("location: "._DOMAIN."/falhou");
-                            exit();ie;
+                            exit();
                         }
 
 
@@ -170,7 +170,7 @@
                                  
 
                                   
-                                    if(($timestampReserva - 3600) > $_POST['hora'] || ($timestampReserva + 3600) < $timestampPost){
+                                    if(($timestampReserva-3600) < $timestampPost && ($timestampReserva + 3600) > $timestampPost){
                                      
                                             $sucesso = false;
                                         
@@ -247,7 +247,21 @@
 
                         );
 
-                        $tem = $sala->create($dados);
+                        $salas = $sala->read();
+
+                        $check = true;
+                        foreach ($salas as $key => $value) {
+                            if($value['numero'] == $dados['numero']){
+                                $check = false;
+                            }
+                        }
+
+                        if($check){
+                            $tem = $sala->create($dados);
+                        }else{
+                            $tem = false;
+                        }
+
                     }
 
                     require(VIEWS."registro.php");
@@ -262,6 +276,28 @@
                     $falhou = true;
 
                     require(VIEWS."home.php");
+                    break;
+
+            case "tabela":
+                if(isset($request[1])){
+                    $reserva = new Reserva();
+                    $reservas = array();
+                    $atual = date("Y-m-d H:i:s");
+                    list($dataAtual, $horaAtual) = explode(" ", $atual);
+                    $dados = array(
+                        'id_sala' => $request[1]
+                    );
+                    $reservas = $reserva->read($dados);
+                    $usuario = new Usuario();
+                    $usuarios = $usuario->read();
+
+                    
+
+                    require(VIEWS."tabela.php");
+                    
+                }else{
+                    require_once(ERROS."404.php");
+                }
                     break;
 
             default:
