@@ -25,22 +25,54 @@
     </head>
     <body>
         <?php
-			require_once(VIEWS."cabecario.php");		
+        	require_once(VIEWS."cabecario.php");		
         ?>
 		
      	<div class="main">
-			<div class="container">		
-
+			<div class="container">	
+			
 
 			<?php
+				
+                if(isset($falhou)){
+                    if($falhou){                       
+
+                         echo '<div class="row">
+                                     <div class="col-md-4 col-xs-4 "></div>
+                                     <div class="col-md-4 col-xs-4 alert alert-danger ">
+                                        <span>Falha da reserva!</span>
+                                     </div>
+                              </div>';     
+                    }                    
+                }
+
+
+
+				$auditorio = array();
+
 				foreach ($salas as $key => $value) {
+
+					$auditorio[$key] = new Sala();
+
+					$auditorio[$key]->setId($value['id']);
+					$auditorio[$key]->setNumero($value['numero']);
+					$auditorio[$key]->setApelido($value['apelido']);
+					$auditorio[$key]->setProjetor($value['projetor']);
+
 					echo '<div class="row">';
 					echo '<div class="col-md-1 col-xs-1">';
+					echo '</div>';					
+					echo '<div class="col-md-11 col-xs-11 salas">';
+					echo '<h1><i class="fa fa-eercast" aria-hidden="true"></i> Auditorio '. $auditorio[$key]->getNumero() .'</h1>';
+					echo '<small>• '. $auditorio[$key]->getApelido() .' •</small>';
+					echo '<form class="register-form" action="reservas/'.$auditorio[$key]->getId().'" method="post">';
+					echo '<input style="color:rgb(58,26,90);" type="text" required="" value="" name="data" placeholder="dia/mês/ano"/>';
+					echo ' - ';
+				    echo '<input style="color:rgb(58,26,90);" type="text" required="" value="" name="hora" placeholder="hora:minuto"/>';
+				    echo '<br><br>';
+				    echo '<button style="color:rgb(58,26,90);" type="submit">Reservar</button>';
+				    echo '</form>';                    
 					echo '</div>';
-					echo '<a href="#"><div class="col-md-10 col-xs-10 salas">';
-					echo '<h1><i class="fa fa-eercast" aria-hidden="true"></i> Auditorio '. $value['numero'] .'</h1>';
-					echo '<small>• '. $value['apelido'] .' •</small>';
-					echo '</div></a>';
 					echo '<div class="col-md-1 col-xs-1">';
 					echo '</div>';
 					echo '</div>';

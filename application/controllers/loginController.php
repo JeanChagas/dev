@@ -26,22 +26,23 @@
 				);
 				
 				$check = $user->logar($dados);
+
+				foreach ($check as $key => $value) {
+					$user->setId($check[$key]['id']);
+					$user->setNome($check[$key]['nome']);
+					$user->setSetor($check[$key]['setor']);
+					$user->setEmail($check[$key]['email']);
+					$user->setUsername($check[$key]['username']);
+					$user->setPassword($check[$key]['password']);
+				}
+
 				
+
 				if (!empty($check)) {
 					
 				    $_SESSION['array'] = $check;
-				    /*$_SESSION = array();
-				  	$_SESSION['array'] = array(
-	   					'id' 		=> 	$check['id'],
-						'nome'  	=> 	$check['nome'],
-						'setor' 	=> 	$check['setor'],
-						'email' 	=> 	$check['email'],
-						'usuario' 	=> 	$check['username'],
-						'password'	=> 	$check['password']
-				   	);*/
 				 
-				 header('location: '.$_SERVER['REDIRECT_REDIRECT_SCRIPT_URI']); 	
-					
+							
 				} else {
 					session_destroy();
 					$_POST = array('falhou' => '1');
