@@ -106,6 +106,7 @@
                     }
 
                     if(isset($_POST['hora']) && isset($_POST['data'])){
+
                         if(preg_match("/(2[0-3]|[01][0-9]):([0-5][0-9])/", $_POST['hora'])){
                             $_POST['hora'] .= ':00' ;
                         }else{
@@ -113,6 +114,7 @@
                             header("location: "._DOMAIN."/falhou");
                             exit();
                         }
+
                         list($dia, $mes, $ano) = explode('/', $_POST['data']);
                         $pattern = $ano.'-'.$mes.'-'.$dia;
 
@@ -161,7 +163,7 @@
 
                             foreach ($reservas as $key => $value) {
 
-                                if(($value['data'] == $pattern && $value['id_sala'] == $request[1]) || $value['data'] == $pattern || $value['id_sala']){
+                                if(($value['data'] == $pattern && $value['id_sala'] == $request[1])){
 
                                     $timestampReserva = strtotime($value['hora']);
                                     $timestampPost = strtotime($_POST['hora']);
@@ -227,6 +229,28 @@
 
             case "logout":
                     require(CONTROLLERS."logoutController.php");
+                    break;
+
+            case "registro":
+                    if(isset($_POST['numero']) && isset($_POST['apelido'])){
+                      
+                        $projetor = (isset ($_POST['projetor']) ? 1 : 0);
+
+                        $sala = new Sala();
+
+                        
+
+                        $dados = array(
+                            'numero'   => $_POST['numero'],
+                            'apelido'  => '"'.$_POST['apelido'].'"',
+                            'projetor' => $projetor
+
+                        );
+
+                        $tem = $sala->create($dados);
+                    }
+
+                    require(VIEWS."registro.php");
                     break;
 
             case "falhou":

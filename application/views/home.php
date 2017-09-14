@@ -69,7 +69,9 @@
 					echo '<input style="color:rgb(58,26,90);" type="text" required="" value="" name="data" placeholder="dia/mês/ano"/>';
 					echo ' - ';
 				    echo '<input style="color:rgb(58,26,90);" type="text" required="" value="" name="hora" placeholder="hora:minuto"/>';
-				    echo '<br><br>';
+				   /* echo '<p data-toggle="tooltip" title="Consulte os horarios"><b>?</b></p>';
+				    echo '';*/
+					echo '<br><br>';
 				    echo '<button style="color:rgb(58,26,90);" type="submit">Reservar</button>';
 				    echo '</form>';                    
 					echo '</div>';
