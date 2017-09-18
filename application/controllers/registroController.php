@@ -33,4 +33,38 @@
 			exit();
 		}
 
+	}else{
+		if(isset($_POST['numero']) && isset($_POST['apelido'])){
+          
+            $projetor = (isset ($_POST['projetor']) ? 1 : 0);
+
+            $sala = new Sala();
+
+            
+
+            $dados = array(
+                'numero'   => $_POST['numero'],
+                'apelido'  => '"'.$_POST['apelido'].'"',
+                'projetor' => $projetor
+
+            );
+
+            $salas = $sala->read();
+
+            $check = true;
+            foreach ($salas as $key => $value) {
+                if($value['numero'] == $dados['numero']){
+                    $check = false;
+                }
+            }
+
+            if($check){
+                $tem = $sala->create($dados);
+            }else{
+                $tem = false;
+            }
+
+        }
+
+        require(VIEWS."registro.php");
 	}
